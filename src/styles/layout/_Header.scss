@@ -1,0 +1,30 @@
+.header {
+    height: 20vh;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    margin-bottom: 10px;
+
+    @include respond(phone) {
+        height: 10vh;
+    }
+
+    @include respond(tab-land) {
+        height: 10vh;
+    }
+
+    @include respond(tab-port) {
+        height: 10vh;
+    }
+
+    &__logo-box {
+        position: absolute;
+        top: 1rem;
+    }
+
+    &__logo {
+        color: $color-white;
+        font-size: 7rem;
+    }
+}

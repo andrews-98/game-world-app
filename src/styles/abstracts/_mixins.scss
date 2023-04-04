@@ -1,0 +1,43 @@
+@mixin shimmer {
+    animation-duration: 2.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: shimmer;
+    animation-timing-function: linear;
+    background: $color-white;
+    background: linear-gradient(to right, #f1efef 8%, #c3bfbf 18%, #ffffff 33%);
+    background-size: 1200px 100%;
+    opacity: .1;
+}
+
+
+// MEDIAQUERIES MANAGER
+
+// $breakpoint argument choices
+// - phone
+// - tab-port
+// - tab-land
+// - big-desktop
+
+// 1em = 16px
+@mixin respond($breakpoint) {
+    @if ($breakpoint == small-phone) {
+        @media (max-width: 20em) {@content};  // 320px
+    }
+
+    @if ($breakpoint == phone) {
+        @media (max-width: 37.5em) {@content};  // 600px
+    }
+
+    @if ($breakpoint == tab-port) {
+        @media (max-width: 56.25em) {@content}; // 900px
+    }
+
+    @if ($breakpoint == tab-land) {
+        @media (max-width: 75em) {@content}; // 1200px
+    }
+
+    @if ($breakpoint == big-desktop) {
+        @media (min-width: 112.5em) {@content}; //  1800px
+    }
+}

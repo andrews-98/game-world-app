@@ -1,0 +1,115 @@
+.game-container {
+    position: relative;
+}
+
+.game {
+    width: 80%;
+    padding: 3rem 3rem 7rem 3rem;
+    display: grid;
+    margin: 0 auto;
+    grid-template-rows: 5rem 50rem repeat(3, min-content);
+    grid-template-columns: 15rem 1fr;
+    gap: 30px;
+    z-index: 100;
+
+    @include respond(small-phone) {
+        width: 95%;
+        grid-template-rows: 7rem 50rem repeat(3, min-content);
+    }
+
+    @include respond(phone) {
+        width: 95%;
+        margin-bottom: 10px;
+    }
+
+    &>* {
+        border-radius: 3px;
+    }
+
+    &__name {
+        width: 100%;
+        font-family: 'Changa One', cursive;
+        letter-spacing: .2rem;
+        text-align: center;
+        padding: 5px;
+        font-size: 2rem;
+        text-transform: uppercase;
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+
+    }
+
+    &__image {
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+        border-radius: 3px;
+        z-index: 2;
+        background-image: rgba($color-black, .6);
+        width: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 0;
+            box-shadow: 0rem .5rem 2rem ($color-black);
+        }
+    }
+
+
+    &__description {
+        background-color: rgba($color-black, .6);
+        grid-column: 1 / -1;
+        grid-row: 3 / 4;
+        padding: 2rem;
+
+        &__heading {
+            font-size: 2.5rem;
+            color: $color-primary;
+        }
+
+        &__text {
+            font-size: 1.7rem;
+        }
+    }
+
+    &__additional-image {
+        width: 70%;
+        margin: 0 auto;
+        grid-column: 1 / -1;
+        grid-row: 4 / 5;
+
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 0;
+        }
+    }
+
+    &__attributes {
+        grid-row: 5 / 6;
+        grid-column: 1 / -1;
+        padding: 2rem;
+        background-color: rgba($color-black, .6);
+
+        &__items {
+            font-size: 2rem;
+            line-height: 2.5;
+        }
+
+        &__item {
+            list-style: none;
+            color: $color-white;
+
+            &:link {
+                text-decoration: none;
+            }
+        }
+    }
+
+
+}

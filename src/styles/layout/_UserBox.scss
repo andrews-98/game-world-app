@@ -1,0 +1,43 @@
+.user-box {
+    min-width: 15%;
+    margin: 0 auto;
+    background-color: rgba($color-black, 0.2);
+    border-radius: 3px;
+    line-height: 1.1;
+    padding: 5px 10px 5px 3px;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__icon {
+        padding: 5px 0px 0px 3px;
+        font-size: 3.2rem;
+        text-align: center;
+    }
+
+    &__info {
+        font-size: 1.5rem;
+        padding: 0px 15px 0px 5px;
+    }
+
+    &__button {
+        font-size: 2.7rem;
+        color: $color-white;
+        transition: all .2s;
+
+        @include respond(small-phone) {
+            font-size: 3.5rem;
+        }
+
+        @include respond(phone) {
+            font-size: 3.5rem;
+        }
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+}

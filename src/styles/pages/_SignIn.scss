@@ -1,0 +1,19 @@
+.login-wrapper {
+    margin: 0 auto;
+    width: 30%;
+    margin-top: 6rem;
+
+    @include respond(phone) {
+        width: 50%;
+    }
+}
+
+.sign-up {
+    font-size: 1.6rem;
+
+    &__link {
+        text-decoration: underline;
+        color: $color-white;
+
+    }
+}

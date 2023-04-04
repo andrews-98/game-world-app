@@ -1,0 +1,33 @@
+.skeleton {
+    display: grid;
+    grid-template-rows: repeat(3, 47rem);
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    grid-gap: 3rem;
+    padding: 3rem 0;
+
+}
+
+.skeleton__box {
+    line-height: 1.5rem;
+    border-radius: 3px;
+   
+
+    &--img {
+        height: 60%;
+
+        @include shimmer
+    }
+
+    &--item {
+        width: 70%;
+        text-align: start;
+        margin-top: 2.5rem;
+        height: 3rem;
+        background-color: black;
+        border-radius: 3px;
+        background-color: $color-grey-dark-3;
+
+        @include shimmer
+    }
+
+}

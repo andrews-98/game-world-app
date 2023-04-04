@@ -1,0 +1,33 @@
+.pagination {
+   display: flex;
+   justify-content: center;
+   margin: 0 auto;
+}
+
+.page-item{
+    list-style: none;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: .5rem;
+    color: $color-white;
+    transition: all .2s;
+    
+
+    &__link {
+        text-decoration: none;
+        padding: 10px 5px;
+        color: $color-primary;
+        transition: all .1s;
+
+        &:hover {
+            color: $color-white;
+        }
+    }
+
+    &:hover {
+        background: rgba($color-black, .1);
+        border-radius: 3px;
+    }
+
+}
+

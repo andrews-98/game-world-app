@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+You can see hosted application on: https://game-store-ba7dd.web.app
+
 ## Available Scripts
 
 In the project directory, you can run:

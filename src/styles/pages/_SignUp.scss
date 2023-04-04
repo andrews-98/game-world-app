@@ -1,0 +1,9 @@
+.signup-wrapper {
+    margin: 0 auto;
+    width: 30%;
+    margin-top: 1rem;
+
+    @include respond(phone) {
+        width: 50%;
+    }
+}

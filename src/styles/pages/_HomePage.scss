@@ -1,0 +1,268 @@
+.intro {
+    height: 95vh;
+    background-image:
+        linear-gradient(to right bottom,
+            rgba($color-black, .7),
+            rgba($color-primary, .1)),
+        url(../../assets/intro.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    // -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    // clip-path: polygon(0 0, 100% 0, 100% 100vh, 0 100%);
+
+    &__text-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        font-size: 6rem;
+    }
+}
+
+// ABOUT SECTION STYLE
+.section-about {
+    padding: 10rem 0;
+}
+
+.about {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    @include respond(small-phone) {
+        width: 95%;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+
+    &__left {
+        width: 40%;
+        z-index: 2;
+        position: relative;
+
+        @include respond(small-phone) {
+            width: 95%;
+            margin: 10px;
+
+            .about-btn {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+
+    }
+
+    &__right {
+        width: 55%;
+        z-index: 1;
+
+        @include respond(small-phone) {
+            width: 95%;
+            margin: 0 auto;
+            padding: 7rem 0;
+        }
+    }
+
+
+    &__composition {
+        position: relative;
+
+        @include respond(phone) {
+            img {
+                width: 100%;
+            }
+        }
+
+
+        &__photo {
+            width: 55%;
+            box-shadow: 0 1.5rem 5rem rgba($color-black, .4);
+            border-radius: 2px;
+            position: absolute;
+            transition: all .2s;
+            outline-offset: 2rem;
+
+            @include respond(phone) {
+                width: 50%;
+                position: static;
+
+            }
+
+            @include respond(tab-port) {
+                width: 60%;
+            }
+
+
+            &--p1 {
+                top: 0;
+                left: 0;
+            }
+
+            &--p2 {
+                top: 2rem;
+                right: 0;
+            }
+
+            &--p3 {
+                top: 17rem;
+                left: 15%;
+
+                @include respond(tab-land) {
+                    top: 14rem;
+                }
+
+                @include respond(tab-port) {
+                    top: 12rem;
+                }
+            }
+
+            // &--p4 {
+            //     top: 20rem;
+            //     right: 1rem;
+            // }
+
+            // &--p5 {
+            //     top: 25rem;
+            //     left: 0;
+            // }
+
+
+            &:hover {
+                outline: .5rem solid $color-primary;
+                transform: scale(1.05) translateY(-.5rem);
+                z-index: 100;
+                box-shadow: 0 2.5rem 5rem rgba($color-black, .5);
+
+            }
+
+        }
+
+        &:hover &__photo:not(:hover) {
+            transform: scale(.95);
+            z-index: 100;
+        }
+    }
+
+
+}
+
+//SECTION STORIES
+.section-stories {
+    position: relative;
+    margin: 10rem 0;
+    padding: 5rem 0;
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .15;
+    overflow: hidden;
+
+    &__content {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.story {
+    width: 75%;
+    margin: 0 auto;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 3rem 6rem rgba($color-black, .1);
+    padding: 6rem;
+    padding-left: 9rem;
+    background-color: rgba($color-black, .3);
+    border-radius: 3px;
+    font-size: $default-font-size;
+    transform: skewX(-12deg);
+
+    @include respond(small-phone) {
+        padding: 4rem;
+        transform: skewX(0deg);
+
+    }
+
+
+
+    &__shape {
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        transform: translateX(-3rem) skewX(12deg);
+
+        @include respond(small-phone) {
+            transform: translateX(0rem) skewX(0deg);
+            float: none;
+        }
+
+        // @include respond(phone) {
+        //     float: none;
+        // }
+
+
+        backface-visibility: hidden;
+    }
+
+    &__img {
+        height: 100%;
+        transform: translateX(-5rem);
+
+        transition: all .5s;
+    }
+
+    &__caption {
+        font-size: 1.8rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        transition: all .2s;
+        color: $color-white;
+        text-align: center;
+        opacity: 0;
+    }
+
+    &:hover &__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &__img {
+        transform: translateX(-5rem) scale(1.1);
+        filter: blur(3px) brightness(80%);
+    }
+
+    &__text {
+        transform: skewX(12deg);
+
+
+        @include respond(small-phone) {
+            transform: skewX(0deg);
+        }
+
+    }
+}

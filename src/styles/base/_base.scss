@@ -1,0 +1,40 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+a {
+    color: white;
+}
+
+html {
+    font-size: 62.5%; // 10px
+
+
+    @include respond(tab-land) {
+        font-size: 56.25%; // 9px 9/16 = 56.25%
+    }
+
+    @include respond(tab-port) {
+        font-size: 50%; // 8px 8/16 = 50%
+    }
+
+    @include respond(phone) {
+        font-size: 37.5%;
+    }
+
+    @include respond(small-phone) {
+        font-size: 32.5%;
+    }
+
+    @include respond(big-desktop) {
+        font-size: 75%; // 12px 12/16 = 75%
+    }
+}
+
+body {
+    box-sizing: border-box;
+}
