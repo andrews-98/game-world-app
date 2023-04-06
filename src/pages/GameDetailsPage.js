@@ -6,7 +6,7 @@ import { fetchGameDetails } from "../store";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
-function GameDetails() {
+function GameDetailsPage() {
     const { id } = useParams();
     const navigate = useNavigate()
     const [fecthData, isLoading, isLoadingError] = useThunk(fetchGameDetails);
@@ -77,4 +77,4 @@ function GameDetails() {
 }
 
 
-export default GameDetails;
+export default GameDetailsPage;

@@ -4,13 +4,13 @@ import GamesPage from "./pages/GamesPage";
 import MainLayout from "./layout";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
-import GameDetails from "./components/GameDetails";
 
 import { RequireAuth } from "./hoc/RequireAuth";
 import { getValueFromLocalStorageByKey } from "./utils/getValueFromLocalStorageByKey";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser, setSignInStatus } from "./store/slices/authSlice";
+import GameDetailsPage from "./pages/GameDetailsPage";
 
 
 
@@ -42,7 +42,7 @@ function App() {
       <Route path="/" element={<MainLayout />}>
         <Route element={<RequireAuth isAuth={signInStatus} />}>
           <Route path="/games" element={<GamesPage />} />
-          <Route path={`/games/:id`} element={<GameDetails />} />
+          <Route path={`/games/:id`} element={<GameDetailsPage />} />
         </Route>
       </Route>
     </Routes>
