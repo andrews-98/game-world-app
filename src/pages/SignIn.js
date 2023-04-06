@@ -32,7 +32,10 @@ function SignIn() {
         user && navigate('/games')
         setIsLoading(false)
       })
-      .catch(err => setErrMessage(err.message.match(/\((.*?)\)/)))
+      .catch(err => {
+        setErrMessage(err.message.match(/\((.*?)\)/))
+        setIsLoading(false)
+      })
   }
   if (errMessage) {
     console.log(errMessage);
